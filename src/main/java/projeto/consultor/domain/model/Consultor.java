@@ -36,9 +36,9 @@ public class Consultor {
     @NotBlank
     String nome;
 
-    @NotBlank
-    @Email
-    String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id")
+    Usuario usuario;
 
     @NotBlank
     @Size(min = 14, max = 16)

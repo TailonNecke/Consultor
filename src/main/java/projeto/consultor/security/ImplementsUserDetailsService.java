@@ -1,4 +1,4 @@
-package projeto.consultor.domain.security;
+package projeto.consultor.security;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;

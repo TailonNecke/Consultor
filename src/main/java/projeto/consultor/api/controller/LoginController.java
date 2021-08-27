@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import projeto.consultor.domain.model.AuthenticationResponse;
 import projeto.consultor.domain.model.Usuario;
-import projeto.consultor.domain.security.ImplementsUserDetailsService;
-import projeto.consultor.domain.security.JWTUtil;
+import projeto.consultor.security.ImplementsUserDetailsService;
+import projeto.consultor.security.JWTUtil;
 
 @AllArgsConstructor
 @RestController

@@ -1,4 +1,4 @@
-package projeto.consultor.domain.security;
+package projeto.consultor.security;
 
 
 import lombok.AllArgsConstructor;
@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, AUTH_LIST).permitAll()
                 .antMatchers(HttpMethod.DELETE, AUTH_LIST).hasRole("ADMIN")
                 .anyRequest().authenticated()
+                .and().cors()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).deleteCookies("token").invalidateHttpSession(true);
                 http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

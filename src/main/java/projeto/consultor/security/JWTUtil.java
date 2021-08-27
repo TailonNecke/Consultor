@@ -1,4 +1,4 @@
-package projeto.consultor.domain.security;
+package projeto.consultor.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

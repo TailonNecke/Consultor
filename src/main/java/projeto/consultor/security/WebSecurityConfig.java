@@ -26,15 +26,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] AUTH_LIST = {
             "/"
+
     };
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, AUTH_LIST).permitAll()
+                .antMatchers(HttpMethod.GET, AUTH_LIST).hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST, AUTH_LIST).hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, AUTH_LIST).permitAll()
+                .antMatchers(HttpMethod.PUT, AUTH_LIST).hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, AUTH_LIST).hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/cards")
                 .hasRole("ADMIN")
@@ -54,9 +55,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("Tailon").password("{noop}123456")
-//                .roles("ADMIN");
         auth.userDetailsService(implementsUserDetailsService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }

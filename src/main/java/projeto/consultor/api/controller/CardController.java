@@ -9,7 +9,6 @@ import projeto.consultor.api.model.input.CardInputDTO;
 import projeto.consultor.domain.Repository.CardRepository;
 import projeto.consultor.domain.Service.CardService;
 import projeto.consultor.domain.model.Card;
-import projeto.consultor.domain.model.Consultor;
 
 
 import javax.validation.Valid;

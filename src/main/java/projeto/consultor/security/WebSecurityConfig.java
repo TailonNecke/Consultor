@@ -39,6 +39,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, AUTH_LIST).hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/cards")
                 .hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/")
+                .hasRole("ADMIN")
                 .antMatchers("/authenticate").permitAll()
                 .anyRequest().authenticated()
                 .and().cors()

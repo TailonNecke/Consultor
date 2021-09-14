@@ -1,0 +1,1 @@
+insert into role_usuarios values(1, "ROLE_ADMIN")

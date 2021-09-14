@@ -1,0 +1,1 @@
+insert into usuario values(1, "consultor@gmail.com", "$2a$10$/wHjktKO4tsZH2q6gSfZsu3K7NoJTOdtp.2lbsALxnVF5hWK6MGwm")
